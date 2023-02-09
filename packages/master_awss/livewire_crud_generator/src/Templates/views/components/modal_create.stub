@@ -1,0 +1,4 @@
+<x-master.modal id-modal="create{{model}}Modal">
+    <h4 class="text-lg font-semibold">Registro de {{variable_model}}</h4>
+    {{section_create}}
+</x-master.modal>

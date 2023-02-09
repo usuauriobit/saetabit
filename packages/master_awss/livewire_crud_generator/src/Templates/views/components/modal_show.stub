@@ -1,0 +1,3 @@
+<x-master.modal id-modal="show{{model}}Modal">
+{{section_show}}
+</x-master.modal>

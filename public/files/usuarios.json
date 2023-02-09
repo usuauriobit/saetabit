@@ -1,0 +1,462 @@
+[
+    {
+      "n": "1",
+      "user": "aalcantara",
+      "oficina": "TARAPOTO",
+      "nombre": "ANABEL",
+      "apellido_paterno": "ALCANTARA",
+      "apellido_materno": "SAJAMI",
+      "dni": "74077715",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "2",
+      "user": "jchong",
+      "oficina": "TARAPOTO",
+      "nombre": "JOSE LUIS",
+      "apellido_paterno": "CHONG",
+      "apellido_materno": "SANCHEZ",
+      "dni": "40967103",
+      "rol": "ADMINISTRADOR"
+    },
+    {
+      "n": "3",
+      "user": "apizango",
+      "oficina": "PUCALLPA",
+      "nombre": "ANA CECILIA",
+      "apellido_paterno": "PIZANGO",
+      "apellido_materno": "SILVA",
+      "dni": "75685136",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "4",
+      "user": "arojas",
+      "oficina": "IQUITOS",
+      "nombre": "ALPINO",
+      "apellido_paterno": "ROJAS",
+      "apellido_materno": "",
+      "dni": "99999999",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "5",
+      "user": "cajaatalaya",
+      "oficina": "ATALAYA",
+      "nombre": "SAETA",
+      "apellido_paterno": "ATALAYA",
+      "apellido_materno": "",
+      "dni": "12345678",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "6",
+      "user": "cajacaballococha",
+      "oficina": "CABALLOCOCHA",
+      "nombre": "CAJA CABALLOCOCHA",
+      "apellido_paterno": "SAETA",
+      "apellido_materno": "",
+      "dni": "00000000",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "7",
+      "user": "cajajaen",
+      "oficina": "JAEN",
+      "nombre": "CAJA",
+      "apellido_paterno": "JAEN",
+      "apellido_materno": "",
+      "dni": "99999999",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "8",
+      "user": "cajapucallpa",
+      "oficina": "PUCALLPA",
+      "nombre": "VENTAS",
+      "apellido_paterno": "PUCALLPA",
+      "apellido_materno": "",
+      "dni": "00000000",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "9",
+      "user": "cajapurus",
+      "oficina": "PUERTO ESPERANZA",
+      "nombre": "SAETA",
+      "apellido_paterno": "PURUS",
+      "apellido_materno": "",
+      "dni": "12345678",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "10",
+      "user": "cramirez",
+      "oficina": "TARAPOTO",
+      "nombre": "CLAUDIA NICOLLE",
+      "apellido_paterno": "RAMIREZ",
+      "apellido_materno": "GONZALES",
+      "dni": "71417329",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "11",
+      "user": "ddelaguila",
+      "oficina": "TARAPOTO",
+      "nombre": "DEYSI",
+      "apellido_paterno": "DEL AGUILA",
+      "apellido_materno": "",
+      "dni": "74203230",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "12",
+      "user": "dhidalgo",
+      "oficina": "TARAPOTO",
+      "nombre": "DIEGO",
+      "apellido_paterno": "HIDALGO",
+      "apellido_materno": "",
+      "dni": "99999999",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "13",
+      "user": "eescalante",
+      "oficina": "TARAPOTO",
+      "nombre": "ELENA",
+      "apellido_paterno": "ESCALANTE",
+      "apellido_materno": "GOMEZ",
+      "dni": "09617491",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "14",
+      "user": "eherrera",
+      "oficina": "PUCALLPA",
+      "nombre": "EDITH",
+      "apellido_paterno": "HERRERA",
+      "apellido_materno": "AREVALO",
+      "dni": "00105671",
+      "rol": "JEFE DE OFICINA"
+    },
+    {
+      "n": "15",
+      "user": "etangoa",
+      "oficina": "TARAPOTO",
+      "nombre": "ELSA MILAGROS",
+      "apellido_paterno": "TANGOA",
+      "apellido_materno": "VASQUEZ",
+      "dni": "70992744",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "16",
+      "user": "fmori",
+      "oficina": "YURIMAGUAS",
+      "nombre": "FREDY",
+      "apellido_paterno": "MORI",
+      "apellido_materno": "",
+      "dni": "44265664",
+      "rol": "JEFE DE OFICINA"
+    },
+    {
+      "n": "17",
+      "user": "fnava",
+      "oficina": "IQUITOS",
+      "nombre": "FABIOLA",
+      "apellido_paterno": "NAVA",
+      "apellido_materno": "",
+      "dni": "00334398",
+      "rol": "JEFE DE OFICINA"
+    },
+    {
+      "n": "18",
+      "user": "gchota",
+      "oficina": "IQUITOS",
+      "nombre": "GUTIG AYLY",
+      "apellido_paterno": "CHOTA",
+      "apellido_materno": "TAMANI",
+      "dni": "47823098",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "19",
+      "user": "jlopez",
+      "oficina": "CHACHAPOYAS",
+      "nombre": "JIMENA ESTEFANI",
+      "apellido_paterno": "LOPEZ",
+      "apellido_materno": "VASQUEZ",
+      "dni": "47344370",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "20",
+      "user": "jshupingahua",
+      "oficina": "PUCALLPA",
+      "nombre": "JOSE LUIS",
+      "apellido_paterno": "SHUPINGAHUA",
+      "apellido_materno": "CAUPER",
+      "dni": "48322185",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "21",
+      "user": "lcelis",
+      "oficina": "PUCALLPA",
+      "nombre": "LUIS PEDRO",
+      "apellido_paterno": "CELIS",
+      "apellido_materno": "DEL CASTILLO",
+      "dni": "99999999",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "22",
+      "user": "lsalda�a",
+      "oficina": "TARAPOTO",
+      "nombre": "LEONARDO",
+      "apellido_paterno": "SALDA�A",
+      "apellido_materno": "MESIAS",
+      "dni": "76748854",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "23",
+      "user": "lvera",
+      "oficina": "CHACHAPOYAS",
+      "nombre": "LEYDI",
+      "apellido_paterno": "VERA",
+      "apellido_materno": "",
+      "dni": "99999999",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "24",
+      "user": "mpadilla",
+      "oficina": "IQUITOS",
+      "nombre": "MELLISA",
+      "apellido_paterno": "PADILLA",
+      "apellido_materno": "",
+      "dni": "99999999",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "25",
+      "user": "mparada",
+      "oficina": "IQUITOS",
+      "nombre": "MACARENA",
+      "apellido_paterno": "PARADA",
+      "apellido_materno": "",
+      "dni": "99999999",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "26",
+      "user": "mpua",
+      "oficina": "YURIMAGUAS",
+      "nombre": "MARCO",
+      "apellido_paterno": "PUA",
+      "apellido_materno": "",
+      "dni": "99999999",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "27",
+      "user": "mramirez",
+      "oficina": "TARAPOTO",
+      "nombre": "MARCO ANTONIO",
+      "apellido_paterno": "RAMIREZ",
+      "apellido_materno": "FLORES",
+      "dni": "41716424",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "28",
+      "user": "mtafur",
+      "oficina": "YURIMAGUAS",
+      "nombre": "MATILDE",
+      "apellido_paterno": "TAFUR",
+      "apellido_materno": "",
+      "dni": "99999999",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "29",
+      "user": "mvargas",
+      "oficina": "TARAPOTO",
+      "nombre": "MAYELI YADIRA",
+      "apellido_paterno": "VARGAS",
+      "apellido_materno": "SORIA",
+      "dni": "71887322",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "30",
+      "user": "mvasquez",
+      "oficina": "PUCALLPA",
+      "nombre": "MELANY DANIROSS",
+      "apellido_paterno": "VASQUEZ",
+      "apellido_materno": "ESCALANTE",
+      "dni": "99999999",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "31",
+      "user": "mvigo",
+      "oficina": "YURIMAGUAS",
+      "nombre": "MAGNA KATHERIN",
+      "apellido_paterno": "VIGO",
+      "apellido_materno": "PINCHI",
+      "dni": "45752872",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "32",
+      "user": "nrios",
+      "oficina": "IQUITOS",
+      "nombre": "NATHALY",
+      "apellido_paterno": "RIOS",
+      "apellido_materno": "",
+      "dni": "99999999",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "33",
+      "user": "oficinasanlorenzo",
+      "oficina": "SAN LORENZO",
+      "nombre": "OFICINA",
+      "apellido_paterno": "SAN LORENZO",
+      "apellido_materno": "",
+      "dni": "99999999",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "34",
+      "user": "ralvarado",
+      "oficina": "IQUITOS",
+      "nombre": "RUDY",
+      "apellido_paterno": "ALVARADO",
+      "apellido_materno": "",
+      "dni": "99999999",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "35",
+      "user": "rmelendez",
+      "oficina": "PUCALLPA",
+      "nombre": "ROMINA",
+      "apellido_paterno": "MELENDEZ",
+      "apellido_materno": "MACEDO",
+      "dni": "62006719",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "36",
+      "user": "rurbina",
+      "oficina": "YURIMAGUAS",
+      "nombre": "RUTH",
+      "apellido_paterno": "URBINA",
+      "apellido_materno": "",
+      "dni": "99999999",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "37",
+      "user": "sgambini",
+      "oficina": "TARAPOTO",
+      "nombre": "SHEYLLA FRANCCESCA",
+      "apellido_paterno": "GAMBINI",
+      "apellido_materno": "MORI",
+      "dni": "47067120",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "38",
+      "user": "sruiz",
+      "oficina": "TARAPOTO",
+      "nombre": "SANDO FIDEL",
+      "apellido_paterno": "RUIZ",
+      "apellido_materno": "GONZALES",
+      "dni": "70509671",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "39",
+      "user": "subbaseiquitos",
+      "oficina": "IQUITOS",
+      "nombre": "SUB BASE",
+      "apellido_paterno": "IQUITOS",
+      "apellido_materno": "",
+      "dni": "99999999",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "40",
+      "user": "subbasepucallpa",
+      "oficina": "PUCALLPA",
+      "nombre": "SUB BASE",
+      "apellido_paterno": "PUCALLPA",
+      "apellido_materno": "",
+      "dni": "99999999",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "41",
+      "user": "subbasetarapoto",
+      "oficina": "TARAPOTO",
+      "nombre": "SUB BASE",
+      "apellido_paterno": "TARAPOTO",
+      "apellido_materno": "",
+      "dni": "99999999",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "42",
+      "user": "subbaseyurimaguas",
+      "oficina": "YURIMAGUAS",
+      "nombre": "SUB BASE",
+      "apellido_paterno": "YURIMAGUAS",
+      "apellido_materno": "",
+      "dni": "99999999",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "43",
+      "user": "wmurrieta",
+      "oficina": "TARAPOTO",
+      "nombre": "WENDY TATIANA",
+      "apellido_paterno": "MURRIETA",
+      "apellido_materno": "RUIZ",
+      "dni": "70788728",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "44",
+      "user": "yaraujo",
+      "oficina": "ATALAYA",
+      "nombre": "YAMAILET BETHZAIDE",
+      "apellido_paterno": "ARAUJO",
+      "apellido_materno": "FINOL",
+      "dni": "20143624",
+      "rol": "VENDEDOR"
+    },
+    {
+      "n": "45",
+      "user": "yennypaz",
+      "oficina": "IQUITOS",
+      "nombre": "HIBERYENNI",
+      "apellido_paterno": "PAZ",
+      "apellido_materno": "",
+      "dni": "99999999",
+      "rol": "ADMINISTRADOR"
+    },
+    {
+      "n": "46",
+      "user": "yvelarde",
+      "oficina": "PUCALLPA",
+      "nombre": "YENNI",
+      "apellido_paterno": "VELARDE",
+      "apellido_materno": "NAVARRO",
+      "dni": "99999999",
+      "rol": "VENDEDOR"
+    }
+  ]

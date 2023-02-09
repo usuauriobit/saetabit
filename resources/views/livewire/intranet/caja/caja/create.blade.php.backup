@@ -1,0 +1,44 @@
+<div>
+    @section('title', __('Caja'))
+
+    @include('components.alert-errors')
+    <div class="mt-8 mb-4 text-xl font-semibold">
+        Caja
+    </div>
+    <div class="cabecera p-6">
+        <x-master.item label="{{ ucfirst('Registro de Caja') }}" sublabel="Registro de Caja">
+            <x-slot name="actions">
+                <a href="{{ route('intranet.caja.caja.index') }}" class="btn btn-primary btn-sm">
+                    Volver
+                </a>
+            </x-slot>
+        </x-master.item>
+    </div>
+    <div class="card-white">
+        <div class="card-body">
+            <form wire:submit.prevent="save">
+                <div x-data="app()" class="grid items-center grid-cols-1 gap-4">
+                    <div>
+                        <div wire:loading class="w-full">
+                            <div class="loader">Cargando...</div>
+                        </div>
+                        <div wire:loading.remove>
+                            <div class="grid grid-cols-3 gap-4 content-start">
+                                <x-master.select name="form.oficina_id" label="Oficina" wire:model.defer="form.oficina_id" :options="$oficinas" required></x-master.select>
+                                <x-master.input name="form.descripcion" label="Descripcion" wire:model.defer="form.descripcion" required></x-master.input>
+                                <x-master.select name="form.tipo_caja_id" label="Tipo Caja" wire:model.defer="form.tipo_caja_id" :options="$tipo_caja" required></x-master.select>
+                            </div>
+                            <x-master.select name="form.cajero_id" label="Cajero" desc="nombre_completo" wire:model.defer="form.cajero_id" :options="$personal" required></x-master.select>
+                            <div class="grid grid-cols-1 content-end">
+                                <button type="submit" class="btn btn-success btn-sm mt-2">Guardar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+
+</script>

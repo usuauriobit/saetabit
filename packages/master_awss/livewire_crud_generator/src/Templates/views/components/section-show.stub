@@ -1,0 +1,15 @@
+    <div wire:loading class="w-full">
+        <div class="loader">Cargando...</div>
+    </div>
+    <div wire:loading.remove>
+        @if (is_null(${{variable_model}}))
+            <div class="loader">Cargando...</div>
+        @else
+            <div class="row">
+{{list_show}}
+            </div>
+        @endif
+    </div>
+    <div class="modal-action">
+        <a href="#" class="btn btn-ghost">Cerrar</a>
+    </div>

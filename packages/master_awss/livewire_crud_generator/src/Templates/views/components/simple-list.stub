@@ -1,0 +1,3 @@
+<div class="col-md-12" >
+                            <x-master.item class="mb-4" label="{{label}}" :sublabel="{{value}}" ></x-master.item>
+                        </div>

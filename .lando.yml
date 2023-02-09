@@ -1,0 +1,14 @@
+name: saeta
+recipe: laravel
+config:
+  webroot: public
+  php: '8.1'
+  database: mysql
+services:
+  node:
+    type: node:14
+    globals:
+      gulp-cli: "latest"
+tooling:
+  npm:
+    service: node

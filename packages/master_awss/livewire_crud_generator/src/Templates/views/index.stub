@@ -1,0 +1,30 @@
+<div>
+    @section('title', __('{{title}}'))
+    <div class="cabecera p-6">
+        <x-master.item label="{{ ucfirst('{{title}}') }}" sublabel="Lista de {{title}}">
+            <x-slot name="actions">
+                <a href="#create{{model}}Modal" wire:click="create" class="btn btn-primary"> <i class="la la-plus"></i> Agregar</a>
+            </x-slot>
+        </x-master.item>
+    </div>
+    {{extra}}
+    <div class="card-white">
+        <div class="card-body">
+            <x-master.datatable :items="$items">
+                <x-slot name="thead">
+                    {{t_head}}
+                </x-slot>
+                <x-slot name="tbody">
+                    @foreach ($items as $row)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            {{td_body}}<td class="w-3">
+{{td_action}}
+                            </td>
+                        </tr>
+                    @endforeach
+                </x-slot>
+            </x-master.datatable>
+        </div>
+    </div>
+</div>

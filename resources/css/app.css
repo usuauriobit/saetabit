@@ -1,0 +1,11 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import 'animations/index.css';
+@import 'loader/index.css';
+@import 'modules/general.css';
+@import 'notyf/notyf.min.css';
+
+.badge-primary, .btn-primary{
+    color: white
+}

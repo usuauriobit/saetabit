@@ -1,0 +1,79 @@
+[
+    {
+        "Matricula": "OB-1564",
+        "Descripcion": "PIPER SENECA II",
+        "PesoPax": "500",
+        "PesoCarga": "500",
+        "Asientos": "5"
+    },
+    {
+        "Matricula": "OB-1630",
+        "Descripcion": "CHEYENNE III",
+        "PesoPax": "700",
+        "PesoCarga": "200",
+        "Asientos": "9"
+    },
+    {
+        "Matricula": "OB-1714",
+        "Descripcion": "CHEYENNE III",
+        "PesoPax": "700",
+        "PesoCarga": "200",
+        "Asientos": "9"
+    },
+    {
+        "Matricula": "OB-1899",
+        "Descripcion": "CESSNA 210 - CENTURION",
+        "PesoPax": "350",
+        "PesoCarga": "150",
+        "Asientos": "6"
+    },
+    {
+        "Matricula": "OB-1945",
+        "Descripcion": "CESSNA 206",
+        "PesoPax": "400",
+        "PesoCarga": "100",
+        "Asientos": "5"
+    },
+    {
+        "Matricula": "OB-2029P",
+        "Descripcion": "CARAVAND",
+        "PesoPax": "200",
+        "PesoCarga": "1200",
+        "Asientos": "12"
+    },
+    {
+        "Matricula": "OB-2042",
+        "Descripcion": "CESSNA 402B",
+        "PesoPax": "560",
+        "PesoCarga": "160",
+        "Asientos": "8"
+    },
+    {
+        "Matricula": "OB-2152",
+        "Descripcion": "JET STREAM 3200",
+        "PesoPax": "1850",
+        "PesoCarga": "1850",
+        "Asientos": "19"
+    },
+    {
+        "Matricula": "OB-2169",
+        "Descripcion": "JET STREAM 3200",
+        "PesoPax": "1850",
+        "PesoCarga": "1850",
+        "Asientos": "19"
+    },
+    {
+        "Matricula": "OB-2178",
+        "Descripcion": "JET STREAM",
+        "PesoPax": "1850",
+        "PesoCarga": "1850",
+        "Asientos": "19"
+    },
+    {
+        "Matricula": "OB-2222",
+        "Descripcion": "JETSTREAM",
+        "PesoPax": "1850",
+        "PesoCarga": "1850",
+        "Asientos": "19"
+    }
+]
