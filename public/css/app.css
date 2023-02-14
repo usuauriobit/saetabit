@@ -1,3 +1,16 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import 'animations/index.css';
+@import 'loader/index.css';
+@import 'modules/general.css';
+@import 'notyf/notyf.min.css';
+
+.badge-primary, .btn-primary{
+    color: white
+}
+
+
 .fade-in-fwd {
 	-webkit-animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 	        animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;

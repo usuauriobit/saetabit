@@ -1,3 +1,44 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import 'animations/index.css';
+@import 'loader/index.css';
+@import 'modules/general.css';
+@import 'notyf/notyf.min.css';
+
+:root {
+  /* change background color for .container__months */
+  /* --litepicker-container-days-color: red !important; */
+  --litepicker-day-color: #005eff  !important;
+  --litepicker-highlighted-day-color: #005eff  !important;
+}
+.floating {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+
+    50% {
+        transform: translatey(-10px);
+    }
+
+    100% {
+        transform: translatey(0px);
+    }
+}
+.grow {
+    /* cursor: pointer; */
+    transition: all 0.2s ease-in-out;
+}
+
+.grow:hover {
+    transform: scale(1.03);
+}
+
+
 .fade-in-fwd {
 	-webkit-animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 	        animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
