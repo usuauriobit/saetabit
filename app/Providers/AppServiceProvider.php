@@ -3,9 +3,10 @@
 namespace App\Providers;
 
 use App\Services\TasaCambioService;
-use Carbon\Carbon;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\URL;
+use Carbon\Carbon;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,6 +27,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if($this->app->environment('production')) {
+            URL::forceScheme('https');
+        }
+
         Carbon::setLocale(config('app.locale'));
         setlocale(LC_ALL, 'es_MX', 'es', 'ES', 'es_MX.utf8');
 
