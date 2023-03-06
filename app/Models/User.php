@@ -87,7 +87,7 @@ class User extends Authenticatable implements MustVerifyEmail
                 return $q->whereNombreLike($search);
             });
         })
-        ->orWhere("email", "LIKE", $search);
+        ->orWhere("email", 'ilike', $search);
     }
     // public function caja(): HasOne { return $this->hasOne(Caja::class, 'cajero_id', 'id'); }
 

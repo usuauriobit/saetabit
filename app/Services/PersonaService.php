@@ -41,9 +41,9 @@ class PersonaService {
     }
 
     public static function searchEmpresa($search){
-        $empresa = Cliente::where('ruc', 'LIKE', $search)
-                ->orWhere('razon_social', 'LIKE', $search)
-                ->orWhere('nombre_comercial', 'LIKE', $search)
+        $empresa = Cliente::where('ruc', 'ilike', $search)
+                ->orWhere('razon_social', 'ilike', $search)
+                ->orWhere('nombre_comercial', 'ilike', $search)
                 ->first();
         if($empresa) return $empresa;
 

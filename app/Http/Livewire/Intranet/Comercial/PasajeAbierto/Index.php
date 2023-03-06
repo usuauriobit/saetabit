@@ -51,17 +51,17 @@ class Index extends Component
                 })
                 ->when($this->nro_documento, function ($query) {
                     $query->whereHas('pasajero', function ($query) {
-                        $query->where('nro_doc', 'like', "%{$this->nro_documento}%");
+                        $query->where('nro_doc', 'ilike', "%{$this->nro_documento}%");
                     });
                 })
                 ->when($this->origen, function ($query) {
                     $query->whereHas('origen.ubigeo', function ($query) {
-                        return $query->where('distrito', 'like', "%{$this->origen}%");
+                        return $query->where('distrito', 'ilike', "%{$this->origen}%");
                     });
                 })
                 ->when($this->destino, function ($query) {
                     $query->whereHas('destino.ubigeo', function ($query) {
-                        return $query->where('distrito', 'like', "%{$this->destino}%");
+                        return $query->where('distrito', 'ilike', "%{$this->destino}%");
                     });
                 })
                 ->when($this->desde, function ($query) {

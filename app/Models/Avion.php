@@ -39,22 +39,22 @@ class Avion extends Model
 
     public function scopeSearchFilter($q, $search){
         return $q->whereHas("tipo_motor", function($q) use ($search){
-            return $q->where("descripcion", "LIKE", $search);
+            return $q->where("descripcion", 'ilike', $search);
         })
         ->orWhereHas("estado", function($q) use ($search){
-            return $q->where("descripcion", "LIKE", $search);
+            return $q->where("descripcion", 'ilike', $search);
         })
         ->orWhereHas("fabricante", function($q) use ($search){
-            return $q->where("descripcion", "LIKE", $search);
+            return $q->where("descripcion", 'ilike', $search);
         })
-        ->orWhere("nro_asientos", "LIKE", $search)
-        ->orWhere("nro_pilotos", "LIKE", $search)
-        ->orWhere("peso_max_pasajeros", "LIKE", $search)
-        ->orWhere("peso_max_carga", "LIKE", $search)
-        ->orWhere("fecha_fabricacion", "LIKE", $search)
-        ->orWhere("descripcion", "LIKE", $search)
-        ->orWhere("modelo", "LIKE", $search)
-        ->orWhere("matricula", "LIKE", $search);
+        ->orWhere("nro_asientos", 'ilike', $search)
+        ->orWhere("nro_pilotos", 'ilike', $search)
+        ->orWhere("peso_max_pasajeros", 'ilike', $search)
+        ->orWhere("peso_max_carga", 'ilike', $search)
+        ->orWhere("fecha_fabricacion", 'ilike', $search)
+        ->orWhere("descripcion", 'ilike', $search)
+        ->orWhere("modelo", 'ilike', $search)
+        ->orWhere("matricula", 'ilike', $search);
     }
 
     /**

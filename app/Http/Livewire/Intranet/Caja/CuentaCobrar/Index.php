@@ -35,11 +35,11 @@ class Index extends Component
 
         return view('livewire.intranet.caja.cuenta-cobrar.index', [
             'clientes' => Cliente::when(strlen($this->search) > 2, function($q) use ($search){
-                                return $q->orWhere("ruc", "LIKE", $search)
-                                        ->orWhere("razon_social", "LIKE", $search);
+                                return $q->orWhere("ruc", 'ilike', $search)
+                                        ->orWhere("razon_social", 'ilike', $search);
                             })->paginate(10),
             'personas' => Persona::when(strlen($this->search) > 2, function($q) use ($search){
-                                return $q->orWhere("nro_doc", "LIKE", $search)
+                                return $q->orWhere("nro_doc", 'ilike', $search)
                                         ->orWhereRaw("CONCAT(nombres, ' ', apellido_paterno, ' ', apellido_materno) LIKE ?", [$search]);
                             })->paginate(10),
             'items' => CuentaCobrar::latest()
@@ -49,7 +49,7 @@ class Index extends Component
                                     [Cliente::class, Persona::class],
                                     function ($query, $type) {
                                         $column = $type === Persona::class ? 'nro_doc' : 'ruc';
-                                        $query->where($column, 'like', "%{$this->nro_doc}%");
+                                        $query->where($column, 'ilike', "%{$this->nro_doc}%");
                                     }
                                 );
                             })

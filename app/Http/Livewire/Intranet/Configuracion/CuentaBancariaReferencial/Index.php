@@ -41,9 +41,9 @@ class Index extends Component
             'items' => CuentaBancariaReferencial::latest()
             ->when(strlen($this->search) > 2, function($q) use ($search){
 				return $q
-				->orWhere("nro_cuenta", "LIKE", $search)
-				->orWhere("descripcion_cuenta", "LIKE", $search)
-				->orWhere("glosa", "LIKE", $search);
+				->orWhere("nro_cuenta", 'ilike', $search)
+				->orWhere("descripcion_cuenta", 'ilike', $search)
+				->orWhere("glosa", 'ilike', $search);
 
             })
             ->paginate($this->nro_pagination),

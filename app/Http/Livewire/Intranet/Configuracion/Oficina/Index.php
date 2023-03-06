@@ -70,13 +70,13 @@ class Index extends Component
             ->when(strlen($this->search) > 2, function($q) use ($search){
 				return $q
 				->orWhereHas("ubigeo", function($q) use ($search){
-                    return $q->where("descripcion", "LIKE", $search);
+                    return $q->where("descripcion", 'ilike', $search);
                 })
-				->orWhere("geo_latitud", "LIKE", $search)
-				->orWhere("geo_longitud", "LIKE", $search)
-				->orWhere("descripcion", "LIKE", $search)
-				->orWhere("direccion", "LIKE", $search)
-				->orWhere("referencia", "LIKE", $search);
+				->orWhere("geo_latitud", 'ilike', $search)
+				->orWhere("geo_longitud", 'ilike', $search)
+				->orWhere("descripcion", 'ilike', $search)
+				->orWhere("direccion", 'ilike', $search)
+				->orWhere("referencia", 'ilike', $search);
             })
             ->paginate($this->nro_pagination),
         ]);

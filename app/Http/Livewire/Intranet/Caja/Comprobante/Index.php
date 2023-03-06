@@ -57,10 +57,10 @@ class Index extends Component
             'items' => Comprobante::withTrashed()
                     ->latest()
                     ->when($this->serie, function ($query) {
-                        $query->where('serie', 'like', "%$this->serie%");
+                        $query->where('serie', 'ilike', "%$this->serie%");
                     })
                     ->when($this->correlativo, function ($query) {
-                        $query->where('correlativo', 'like', "%$this->correlativo%");
+                        $query->where('correlativo', 'ilike', "%$this->correlativo%");
                     })
                     ->when($this->desde, function ($query) {
                         $query->whereDate('fecha_emision', '>=', $this->desde);
@@ -76,10 +76,10 @@ class Index extends Component
                     ->paginate(10),
             'comprobantes_disponibles' => Comprobante::whereNull('comprobante_modifica_id')
                                             ->when(strlen($this->search) > 2, function($query) use ($search){
-                                                $query->where('denominacion', 'like', $search);
+                                                $query->where('denominacion', 'ilike', $search);
                                             })
                                             ->when(strlen($this->nro_documento) > 2, function($query) use ($nro_documento){
-                                                $query->where('nro_documento', 'like', $nro_documento);
+                                                $query->where('nro_documento', 'ilike', $nro_documento);
                                             })
                                             ->paginate(10),
         ]);

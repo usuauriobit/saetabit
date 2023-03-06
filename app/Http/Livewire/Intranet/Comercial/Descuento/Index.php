@@ -82,7 +82,7 @@ class Index extends Component
                     //     $q->where('is_interno', true);
                     // })
                     // ->when(strlen($this->search) > 2, function($q) use ($search){
-                    //     return $q->Where('descripcion', 'LIKE', $search);
+                    //     return $q->Where('descripcion', 'ilike', $search);
                     // })
                     when($this->estado_id == 'expirados', function($q){
                         $q->whereExpirados();

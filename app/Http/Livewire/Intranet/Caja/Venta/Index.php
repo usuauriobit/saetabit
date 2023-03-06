@@ -42,7 +42,7 @@ class Index extends Component
                                 [Persona::class, Cliente::class],
                                 function ($query, $type) use ($search) {
                                     if($type === Cliente::class)
-                                        $query->where('razon_social', 'like', $search);
+                                        $query->where('razon_social', 'ilike', $search);
                                     else
                                         $query->whereNombreLike($search);
                             });
@@ -53,22 +53,22 @@ class Index extends Component
                                 [Persona::class, Cliente::class],
                                 function ($query, $type) use ($nro_documento) {
                                     if($type === Cliente::class)
-                                        $query->where('ruc', 'like', $nro_documento);
+                                        $query->where('ruc', 'ilike', $nro_documento);
                                     else
-                                        $query->where('nro_doc', 'like', $nro_documento);
+                                        $query->where('nro_doc', 'ilike', $nro_documento);
                             });
                     })
                     ->when($this->n_venta, function ($query) {
-                        $query->where('id', 'like', "%$this->n_venta%");
+                        $query->where('id', 'ilike', "%$this->n_venta%");
                     })
                     ->when($this->serie, function ($query) {
                         $query->whereHas('comprobante', function ($query) {
-                            $query->where('serie', 'like', "%$this->serie%");
+                            $query->where('serie', 'ilike', "%$this->serie%");
                         });
                     })
                     ->when($this->correlativo, function ($query) {
                         $query->whereHas('comprobante', function ($query) {
-                            $query->where('correlativo', 'like', "%$this->correlativo%");
+                            $query->where('correlativo', 'ilike', "%$this->correlativo%");
                         });
                     })
                     ->when($this->desde, function ($query) {

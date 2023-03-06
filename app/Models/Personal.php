@@ -37,7 +37,7 @@ class Personal extends Model
     public function scopeIndexFilter($q, String $search){
         return $q
             ->orWhereHas("oficina", function($q) use ($search){
-                return $q->where("descripcion", "LIKE", $search);
+                return $q->where("descripcion", 'ilike', $search);
             })
             ->orWhereHas("persona", function($q) use ($search){
                 return $q->whereNombreLike($search);

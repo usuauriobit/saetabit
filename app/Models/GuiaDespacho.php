@@ -300,7 +300,7 @@ class GuiaDespacho extends Model
             ->orWhereHas("consignatario", function($q) use ($search){
                 return $q->whereNombreLike($search);
             })
-            ->orWhere("codigo", "LIKE", $search);
+            ->orWhere("codigo", 'ilike', $search);
         })
         ->when(!is_null($estado) && $estado != 'todos', function($q) use ($estado){
             $q->when($estado == 'pendiente', function($q){
@@ -312,10 +312,10 @@ class GuiaDespacho extends Model
         })
         ->when(strlen($nro_documento) > 3, function ($q) use ($nro_documento) {
             $q->whereHas("remitente", function($q) use ($nro_documento){
-                return $q->where('nro_doc', 'like', $nro_documento);
+                return $q->where('nro_doc', 'ilike', $nro_documento);
             })
             ->orWhereHas("consignatario", function($q) use ($nro_documento){
-                return $q->where('nro_doc', 'like', $nro_documento);
+                return $q->where('nro_doc', 'ilike', $nro_documento);
             });
         });
     }
@@ -323,7 +323,7 @@ class GuiaDespacho extends Model
 
         return $q
         // ->orWhereHas("ruta", function($q) use ($search){
-        //     return $q->where("descripcion", "LIKE", $search);
+        //     return $q->where("descripcion", 'ilike', $search);
         // })
         ->when(is_null($type), function($q) use ($type){
             $q->withTrashed();

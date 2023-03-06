@@ -48,11 +48,11 @@ class Ubicacion extends Model
 
 
     public function scopeSearchFilter($q, $search){
-        return $q->where('descripcion', 'LIKE', $search)
-            ->orWhere('codigo_iata', 'LIKE', $search)
-            ->orWhere('codigo_icao', 'LIKE', $search)
+        return $q->where('descripcion', 'ilike', $search)
+            ->orWhere('codigo_iata', 'ilike', $search)
+            ->orWhere('codigo_icao', 'ilike', $search)
             ->orWhereHas('tipo_pista', function($q) use ($search) {
-                return $q->where('descripcion', 'LIKE', $search);
+                return $q->where('descripcion', 'ilike', $search);
             })
             ->orWhereHas('ubigeo', function($q) use ($search) {
                 return $q->filterSearch($search);

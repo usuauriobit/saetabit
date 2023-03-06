@@ -41,7 +41,7 @@ class Index extends Component
                 $query->whereTipoDocumentoId($this->tipo_documento_id);
             })
             ->when($this->nro_doc, function ($query) use ($nro_doc) {
-                $query->where('nro_doc', 'like', $nro_doc);
+                $query->where('nro_doc', 'ilike', $nro_doc);
             })
             ->when($this->nombre, function ($query) use ($nombre) {
                 $query->whereNombreLike($nombre);

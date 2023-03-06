@@ -41,13 +41,13 @@ class Index extends Component
                     // ->when(strlen($this->search) > 2, function($q) use ($search){
                     //     return $q
                     //     ->orWhereHas("caja", function($q) use ($search){
-                    //         return $q->where("descripcion", "LIKE", $search);
+                    //         return $q->where("descripcion", 'ilike', $search);
                     //     })
                     //     ->orWhereHas("user_created.personal.persona", function($q) use ($search){
                     //         return $q->whereRaw("CONCAT(nombres, ' ', apellido_paterno, ' ', apellido_materno) LIKE ?", [$search]);
                     //     })
-                    //     ->orWhere("fecha_apertura", "LIKE", $search)
-                    //     ->orWhere("fecha_cierre", "LIKE", $search)
+                    //     ->orWhere("fecha_apertura", 'ilike', $search)
+                    //     ->orWhere("fecha_cierre", 'ilike', $search)
                     //     ;
                     // })
                     ->when($this->oficina_id, function ($q) {

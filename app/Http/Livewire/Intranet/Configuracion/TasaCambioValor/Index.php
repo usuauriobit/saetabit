@@ -11,8 +11,8 @@ class Index extends Component{
         return view('livewire.intranet.configuracion.tasa-cambio-valor.index', [
             'items' => TasaCambioValor::orderBy('fecha', 'desc')
                 ->when(isset($this->search), function($q){
-                    $q->where('valor_venta', 'LIKE', '%'.$this->search.'%')
-                        ->orWhere('fecha', 'LIKE', '%'.$this->search.'%');
+                    $q->where('valor_venta', 'ilike', '%'.$this->search.'%')
+                        ->orWhere('fecha', 'ilike', '%'.$this->search.'%');
                 })
                 ->withTrashed()
                 ->paginate(10)

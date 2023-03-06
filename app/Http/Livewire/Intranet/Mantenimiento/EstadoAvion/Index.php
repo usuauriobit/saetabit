@@ -39,7 +39,7 @@ class Index extends Component
             'items' => EstadoAvion::latest()
             ->when(strlen($this->search) > 2, function($q) use ($search){
 				return $q
-				->orWhere("descripcion", "LIKE", $search);
+				->orWhere("descripcion", 'ilike', $search);
 
             })
             ->paginate(10),

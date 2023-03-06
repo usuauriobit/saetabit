@@ -38,7 +38,7 @@ class Tripulacion extends Model
     public function scopeSearchFilter($q, $search){
         return $q->whereNombreLike($search)
         ->orWhereHas("tipo_tripulacion", function($q) use ($search){
-            return $q->where("descripcion", "LIKE", $search);
+            return $q->where("descripcion", 'ilike', $search);
         });
     }
     public function user_created(): BelongsTo { return $this->belongsTo(User::class, 'user_created_id', 'id'); }

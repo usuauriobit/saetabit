@@ -57,40 +57,40 @@ class Index extends Component
             return $q->whereHas("ruta", function($q) use ($search){
                 return $q->whereHas("tramo", function($q) use ($search){
                     return $q->whereHas("origen", function($q) use ($search){
-                        return $q->where('codigo_iata', 'LIKE', $search)
-                        ->orWhere('codigo_icao', 'LIKE', $search)
+                        return $q->where('codigo_iata', 'ilike', $search)
+                        ->orWhere('codigo_icao', 'ilike', $search)
                         ->orWhereHas('ubigeo', function($q) use ($search){
-                            return $q->where('codigo', 'LIKE', $search)
-                            ->orWhere('departamento', 'LIKE', $search)
-                            ->orWhere('provincia', 'LIKE', $search)
-                            ->orWhere('distrito', 'LIKE', $search);
+                            return $q->where('codigo', 'ilike', $search)
+                            ->orWhere('departamento', 'ilike', $search)
+                            ->orWhere('provincia', 'ilike', $search)
+                            ->orWhere('distrito', 'ilike', $search);
                         });
                     })
                     ->orWhereHas("escala", function($q) use ($search){
-                        return $q->where('codigo_iata', 'LIKE', $search)
-                        ->orWhere('codigo_icao', 'LIKE', $search)
+                        return $q->where('codigo_iata', 'ilike', $search)
+                        ->orWhere('codigo_icao', 'ilike', $search)
                         ->orWhereHas('ubigeo', function($q) use ($search){
-                            return $q->where('codigo', 'LIKE', $search)
-                            ->orWhere('departamento', 'LIKE', $search)
-                            ->orWhere('provincia', 'LIKE', $search)
-                            ->orWhere('distrito', 'LIKE', $search);
+                            return $q->where('codigo', 'ilike', $search)
+                            ->orWhere('departamento', 'ilike', $search)
+                            ->orWhere('provincia', 'ilike', $search)
+                            ->orWhere('distrito', 'ilike', $search);
                         });
                     })
                     ->orWhereHas("destino", function($q) use ($search){
-                        return $q->where('codigo_iata', 'LIKE', $search)
-                        ->orWhere('codigo_icao', 'LIKE', $search)
+                        return $q->where('codigo_iata', 'ilike', $search)
+                        ->orWhere('codigo_icao', 'ilike', $search)
                         ->orWhereHas('ubigeo', function($q) use ($search){
-                            return $q->where('codigo', 'LIKE', $search)
-                            ->orWhere('departamento', 'LIKE', $search)
-                            ->orWhere('provincia', 'LIKE', $search)
-                            ->orWhere('distrito', 'LIKE', $search);
+                            return $q->where('codigo', 'ilike', $search)
+                            ->orWhere('departamento', 'ilike', $search)
+                            ->orWhere('provincia', 'ilike', $search)
+                            ->orWhere('distrito', 'ilike', $search);
                         });
                     });
                 });
             })
-            ->orWhere("precio", "LIKE", $search)
-            ->orWhere("maximo_equipaje", "LIKE", $search)
-            ->orWhere("descripcion", "LIKE", $search);
+            ->orWhere("precio", 'ilike', $search)
+            ->orWhere("maximo_equipaje", 'ilike', $search)
+            ->orWhere("descripcion", 'ilike', $search);
         })
         ->get();
     }

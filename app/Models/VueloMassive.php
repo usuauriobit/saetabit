@@ -64,15 +64,15 @@ class VueloMassive extends Model
     }
 
     public function scopeSearchFilter($q, $search){
-        return $q->where('paquete', 'LIKE', $search)
+        return $q->where('paquete', 'ilike', $search)
                 ->orWhereHas('cliente', function($q) use ($search){
-                    return $q->where('descripcion', 'LIKE', $search)
-                            ->orWhere('razon_social', 'LIKE', $search);
+                    return $q->where('descripcion', 'ilike', $search)
+                            ->orWhere('razon_social', 'ilike', $search);
                 })
-                ->orWhere('nro_contrato', 'LIKE', $search)
-                ->orWhere('monto_total', 'LIKE', $search)
-                ->orWhereDate('fecha_inicio', 'LIKE', $search)
-                ->orWhereDate('fecha_final', 'LIKE' ,$search);
+                ->orWhere('nro_contrato', 'ilike', $search)
+                ->orWhere('monto_total', 'ilike', $search)
+                ->orWhereDate('fecha_inicio', 'ilike', $search)
+                ->orWhereDate('fecha_final', 'ilike' ,$search);
     }
 
     public function getCanDestroyAttribute(){

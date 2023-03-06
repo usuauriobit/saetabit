@@ -230,12 +230,12 @@ class Pasaje extends Model
         })
         ->when($origen, function ($q) use ($origen) {
             return $q->whereHas('origen.ubigeo', function ($q) use ($origen) {
-                return $q->where('distrito', 'like', "%{$origen}%");
+                return $q->where('distrito', 'ilike', "%{$origen}%");
             });
         })
         ->when($destino, function ($q) use ($destino) {
             return $q->whereHas('destino.ubigeo', function ($q) use ($destino) {
-                return $q->where('distrito', 'like', "%{$destino}%");
+                return $q->where('distrito', 'ilike', "%{$destino}%");
             });
         })
         ->when($desde, function ($q) use ($desde) {
@@ -247,22 +247,22 @@ class Pasaje extends Model
         ->when(strlen($search) > 5, function ($q) use ($search){
             $q
             ->whereHas('tipo_pasaje', function($q) use ($search){
-                return $q->where('descripcion', 'LIKE', $search)
-                    ->orWhere('descripcion', 'LIKE', $search);
+                return $q->where('descripcion', 'ilike', $search)
+                    ->orWhere('descripcion', 'ilike', $search);
             })
             ->orWhereHas('pasajero', function($q) use ($search){
                 return $q->whereNombreLike($search);
             })
             // ->orWhereHas('tarifa', function($q) use ($search){
-            //     return $q->where('descripcion', 'LIKE', $search)
+            //     return $q->where('descripcion', 'ilike', $search)
             //         ->orWhereHas('ruta', function($q) use ($search){
             //             return $q->whereHas('tramo', function($query) use ($search){
             //                 return $query->searchFilter($search);
             //             });
             //         });
             // })
-            ->orWhere('telefono', 'LIKE', $search)
-            ->orWhere('fecha', 'LIKE', $search);
+            ->orWhere('telefono', 'ilike', $search)
+            ->orWhere('fecha', 'ilike', $search);
         });
     }
 

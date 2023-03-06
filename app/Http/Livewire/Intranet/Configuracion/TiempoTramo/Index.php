@@ -45,14 +45,14 @@ class Index extends Component
             ->when(strlen($this->search) > 2, function($q) use ($search){
 				return $q
 				->orWhereHas("tramo", function($q) use ($search){
-                    return $q->where("descripcion", "LIKE", $search);
-                    // ->orWhere("", "LIKE", $search);
+                    return $q->where("descripcion", 'ilike', $search);
+                    // ->orWhere("", 'ilike', $search);
                 })
 				->orWhereHas("avion", function($q) use ($search){
-                    return $q->where("descripcion", "LIKE", $search);
-                    // ->orWhere("", "LIKE", $search);
+                    return $q->where("descripcion", 'ilike', $search);
+                    // ->orWhere("", 'ilike', $search);
                 })
-				->orWhere("tiempo_vuelo", "LIKE", $search);
+				->orWhere("tiempo_vuelo", 'ilike', $search);
 
             })
             ->paginate($this->nro_pagination),

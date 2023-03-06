@@ -30,9 +30,9 @@ class Ubigeo extends Model
     }
 
     public function scopeFilterSearch($q, $search){
-        return $q->where('codigo', 'LIKE', $search)
-            ->orWhere('departamento', 'LIKE', $search)
-            ->orWhere('provincia', 'LIKE', $search)
-            ->orWhere('distrito', 'LIKE', $search);
+        return $q->where('codigo', 'ilike', $search)
+            ->orWhere('departamento', 'ilike', $search)
+            ->orWhere('provincia', 'ilike', $search)
+            ->orWhere('distrito', 'ilike', $search);
     }
 }

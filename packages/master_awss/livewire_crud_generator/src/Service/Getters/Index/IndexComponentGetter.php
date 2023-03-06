@@ -46,11 +46,11 @@ class IndexComponentGetter extends BaseGenerator{
 
             if($column['foreign_status']['is_foreign']){
                 $filter .= $this->tab(4).'->orWhereHas("'.$column['foreign_status']['method'].'", function($q) use ($search){
-                    return $q->where("descripcion", "LIKE", $search);
-                    // ->orWhere("", "LIKE", $search);
+                    return $q->where("descripcion", 'ilike', $search);
+                    // ->orWhere("", 'ilike', $search);
                 })';
             }else{
-                $filter .= $this->tab(4).'->orWhere("'.$column['field'].'", "LIKE", $search)';
+                $filter .= $this->tab(4).'->orWhere("'.$column['field'].'", 'ilike', $search)';
             }
             if ($index === array_key_last($columns))
                 $filter .= ";";

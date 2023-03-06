@@ -35,14 +35,14 @@ class Index extends Component
                                 $query->whereTipoDocumentoId($this->tipo_documento_id);
                             })
                             ->when($this->nro_documento, function ($query) {
-                                $query->where('nro_doc', 'like', "%{$this->nro_documento}%");
+                                $query->where('nro_doc', 'ilike', "%{$this->nro_documento}%");
                             })
                             ->paginate($this->nro_pagination),
             'empresas' => Cliente::when($this->nro_documento, function ($query) {
-                                $query->where('ruc', 'like', "%{$this->nro_documento}%");
+                                $query->where('ruc', 'ilike', "%{$this->nro_documento}%");
                             })
                             ->when(strlen($this->search) > 2, function ($query) use ($search) {
-                                $query->where('razon_social', 'like', $search);
+                                $query->where('razon_social', 'ilike', $search);
                             })
                             ->paginate($this->nro_pagination),
         ]);

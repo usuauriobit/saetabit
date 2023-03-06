@@ -68,7 +68,7 @@ class Show extends Component
                                                     [Persona::class, Cliente::class],
                                                     function ($query, $type) use ($search_ventas) {
                                                         $column = $type === Persona::class ? 'nro_doc' : 'ruc';
-                                                        $query->where($column, 'like', $search_ventas);
+                                                        $query->where($column, 'ilike', $search_ventas);
                                                     }
                                                 );
                                             });
@@ -82,7 +82,7 @@ class Show extends Component
                                                         if ($type === Persona::class)
                                                             $query->whereNombreLike($search_ventas_cliente);
                                                         else
-                                                            $query->where('razon_social', 'like', $search_ventas_cliente);
+                                                            $query->where('razon_social', 'ilike', $search_ventas_cliente);
                                                     }
                                                 );
                                             });

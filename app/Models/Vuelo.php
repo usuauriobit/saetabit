@@ -519,10 +519,10 @@ class Vuelo extends Model
                 $query->whereDate('fecha_hora_vuelo_programado', '<=', $hasta);
             })
             ->when(strlen($search) > 5, function ($q) use ($search){
-                $q->where('codigo', 'LIKE', $search)
+                $q->where('codigo', 'ilike', $search)
                 ->orWhereHas("avion", function($q) use ($search){
-                    return $q->where("descripcion", "LIKE", $search)
-                        ->orWhere("matricula", "LIKE", $search);
+                    return $q->where("descripcion", 'ilike', $search)
+                        ->orWhere("matricula", 'ilike', $search);
                 });
             });
     }

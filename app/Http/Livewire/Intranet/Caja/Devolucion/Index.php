@@ -54,7 +54,7 @@ class Index extends Component
                                 [Cliente::class, Persona::class],
                                 function ($query, $type) use ($nro_doc_devolucion) {
                                     $column = $type === Cliente::class ? 'ruc' : 'nro_doc';
-                                    $query->where($column, 'like', $nro_doc_devolucion);
+                                    $query->where($column, 'ilike', $nro_doc_devolucion);
                                 });
                         });
                     })
@@ -64,7 +64,7 @@ class Index extends Component
                                 [Cliente::class, Persona::class],
                                 function ($query, $type) use ($cliente_devolucion) {
                                     if ($type === Cliente::class)
-                                        $query->where('razon_social', 'like', $cliente_devolucion);
+                                        $query->where('razon_social', 'ilike', $cliente_devolucion);
                                     else
                                         $query->whereNombreLike($cliente_devolucion);
                             });
@@ -95,7 +95,7 @@ class Index extends Component
                                             [Cliente::class, Persona::class],
                                             function ($query, $type) use ($nro_doc_dv) {
                                                 $column = $type === Cliente::class ? 'ruc' : 'nro_doc';
-                                                $query->where($column, 'like', $nro_doc_dv);
+                                                $query->where($column, 'ilike', $nro_doc_dv);
                                             });
                                         });
                                     })
@@ -105,7 +105,7 @@ class Index extends Component
                                                 [Cliente::class, Persona::class],
                                                 function ($query, $type) use ($cliente_dv) {
                                                     if ($type === Cliente::class)
-                                                        $query->where('razon_social', 'like', $cliente_dv);
+                                                        $query->where('razon_social', 'ilike', $cliente_dv);
                                                     else
                                                         $query->whereNombreLike($cliente_dv);
                                             });

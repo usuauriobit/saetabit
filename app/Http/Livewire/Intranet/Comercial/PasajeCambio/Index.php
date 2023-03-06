@@ -85,7 +85,7 @@ class Index extends Component{
         })
         ->when($this->nro_documento, function ($query) {
             $query->whereHas('pasajero_nuevo', function ($query) {
-                $query->where('nro_doc', 'like', "%{$this->nro_documento}%");
+                $query->where('nro_doc', 'ilike', "%{$this->nro_documento}%");
             });
         })
         ->withTrashed()
