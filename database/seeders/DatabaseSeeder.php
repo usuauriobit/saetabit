@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ClienteSeeder::class);
         $this->call(MotivoAnulacionSeeder::class);
         $this->call(TipoTripulacionSeeder::class);
-        $this->call(TripulacionSeeder::class);
+        // $this->call(TripulacionSeeder::class);
         $this->call(TarifaSeeder::class);
         $this->call(TipoMovimientoSeeder::class);
         $this->call(TipoDescuentoSeeder::class);
