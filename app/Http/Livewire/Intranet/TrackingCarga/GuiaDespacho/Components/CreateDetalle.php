@@ -25,7 +25,9 @@ class CreateDetalle extends Component
         'is_valorado'   => false,
         'monto_valorado'=> null,
     ];
-    public function rules(){
+
+    public function rules()
+    {
         return [
             'form.is_sobre'     => 'required|boolean',
             'form.descripcion'  => 'required',
@@ -35,39 +37,48 @@ class CreateDetalle extends Component
             'form.alto'         => 'nullable|numeric',
             'form.ancho'        => 'nullable|numeric',
             'form.largo'        => 'nullable|numeric',
-            'is_valorado'       => 'required|boolean',
-            'monto_valorado'    => $this->form['is_valorado'] ? 'required' : 'nullable',
+            'form.is_valorado'       => 'required|boolean',
+            'form.monto_valorado'    => 'required_if:form.is_valorado,' . true,
         ];
     }
-    public function mount(){
+
+    public function mount()
+    {
         if($this->guiaDespachoDetalleId){
             $this->guiaDespachoDetalle = GuiaDespachoDetalle::find($this->guiaDespachoDetalleId);
             $this->form = optional($this->guiaDespachoDetalle)->toArray();
         }
     }
-    // public function getImporteSolesProperty(){
-    //     return (new TasaCambioService())->getMontoSoles(( (float) $this->form['importe']) ?? 0);
-    // }
-    public function render() {
+
+    public function render()
+    {
         return view('livewire.intranet.tracking-carga.guia-despacho.components.create-detalle');
     }
-    public function save(){
+
+    public function save()
+    {
         $this->guiaDespachoDetalle
             ? $this->update()
             : $this->store();
         $this->return();
     }
-    public function store(){
+
+    public function store()
+    {
         $data = $this->validate()['form'];
         $this->guiaDespacho->detalles()->create($data);
         $this->emit('notify', 'success', 'Se registró correctamente.');
     }
-    public function update(){
+
+    public function update()
+    {
         $data = $this->validate()['form'];
         $this->guiaDespachoDetalle->update($data);
         $this->emit('notify', 'success', 'Se editó correctamente.');
     }
-    public function return(){
+
+    public function return()
+    {
         $this->emit('closeModals');
         $this->emit('detalleSetted');
     }

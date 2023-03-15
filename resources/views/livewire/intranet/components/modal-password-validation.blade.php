@@ -31,5 +31,5 @@
                     Aceptar
                 </button>
             </div>
-        </x-dynamic-component>
+    </x-dynamic-component>
 </div>
