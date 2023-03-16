@@ -15,7 +15,7 @@ class DescuentoService {
     use DescuentosRestantesGetter;
 
     public Vuelo        $vuelo_origen;
-    public Tarifa       $tarifa;
+    public ?Tarifa       $tarifa;
     public Bool         $is_ida_vuelta;
     public TipoPasaje   $tipoPasaje;
     public Persona      $persona;
@@ -23,7 +23,7 @@ class DescuentoService {
 
     public function __construct(
         Vuelo       $vuelo_origen,
-        Tarifa      $tarifa,
+        ?Tarifa      $tarifa,
         Bool        $is_ida_vuelta,
         TipoPasaje  $tipoPasaje,
         Persona     $persona,
