@@ -11,9 +11,7 @@
 ])
 <div class="w-full form-control" x-data="{
     handleOnChange(e) {
-            console.log('TYPE', e.target.type)
             if (!['number', 'date', 'datetime'].includes(e.target.type)) {
-                console.log('VALUE', e.target.value)
                 e.target.value = this.quitarAcentos(e.target.value.toUpperCase())
             }
         },

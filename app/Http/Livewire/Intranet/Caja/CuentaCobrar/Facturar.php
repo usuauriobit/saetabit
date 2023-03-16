@@ -57,8 +57,6 @@ class Facturar extends Component
 			'form.fecha_vencimiento' => 'required',
 			'form.tipo_nota_credito_id' => 'nullable|exists:tipo_nota_creditos,id',
             'form.observaciones' => 'nullable|string',
-            // 'form.fecha_credito' => 'nullable|date',
-            // 'form.nro_cuotas' => 'nullable|numeric',
             'form.cuotas' => 'nullable|array'
         ];
 
@@ -74,7 +72,6 @@ class Facturar extends Component
         $this->tipo_pagos = TipoPago::get();
         $this->cajas = Caja::whereIn('id', Auth::user()->personal->cajas->pluck('id'))->get();
         $this->form['tipo_pago_id'] = $this->tipo_pagos->firstWhere('descripcion', 'Efectivo')->id;
-        // $this->form['tipo_comprobante_id'] = $this->tipo_comprobantes->firstWhere('descripcion', 'Factura')->id;
         $this->form['nro_documento'] = $this->cuenta_cobrar->clientable->ruc;
         $this->form['denominacion'] = $this->cuenta_cobrar->clientable->razon_social;
         $this->form['tipo_documento_id'] = $this->tipo_documentos->firstWhere('descripcion', 'RUC')->id;
@@ -95,6 +92,7 @@ class Facturar extends Component
 
     public function store()
     {
+        $this->form['cuotas'] = $this->cuotas;
         $form = $this->validate();
 
         DB::transaction(function () use ($form) {
@@ -188,17 +186,17 @@ class Facturar extends Component
     public function addCuota()
     {
         if (array_key_exists('fecha_pago_cuota', $this->formCuota) & array_key_exists('importe', $this->formCuota)) {
-            $this->form['cuotas'][] = [
+            $this->cuotas[] = [
                 'fecha' => $this->formCuota['fecha_pago_cuota'],
                 'importe' => $this->formCuota['importe'],
             ];
+
+            $this->formCuota = [];
         }
-        $this->formCuota = [];
     }
 
     public function removeCuota($index)
     {
-        // Debugbar::info($index);
-        unset($this->form['cuotas'][$index]);
+        unset($this->cuotas[$index]);
     }
 }

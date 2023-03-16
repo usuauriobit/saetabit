@@ -51,7 +51,7 @@
                             {{-- ≈ @soles($row->importe_soles) --}}
                         </td>
                         <td>
-                            {{ $row->monto_valorizado }}
+                            {{ $row->monto_valorado }}
                         </td>
                         <td class="w-3">
                             @if ($guia_despacho->can_manipulate)

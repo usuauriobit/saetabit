@@ -1,0 +1,32 @@
+[x-cloak] {
+    display: none !important;
+}
+
+html {
+    font-size: 14px;
+}
+
+.card {
+    @apply rounded-lg
+}
+
+.card-white {
+    @apply bg-white rounded-md shadow-lg;
+    /* background: rgba(255, 255, 255, 0.53);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); */
+}
+
+.card-blur {
+    background: rgba(255, 255, 255, 0.63);
+    backdrop-filter: blur(13.8px);
+    border-radius: 12px;
+}
+
+.btn-primary {
+    @apply text-white
+}
+
+.badge-primary {
+    color: white;
+}

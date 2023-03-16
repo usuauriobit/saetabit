@@ -76,8 +76,8 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @if (array_key_exists('cuotas', $form))
-                                        @foreach ($form['cuotas'] as $cuota)
+                                    @if ($cuotas)
+                                        @foreach ($cuotas as $cuota)
                                             <tr>
                                                 <td class="text-center">{{ $loop->iteration }}</td>
                                                 <td class="text-center">{{ $cuota['fecha'] }}</td>
@@ -95,8 +95,8 @@
                                     <tr>
                                         <th class="text-right" colspan="2">Total</th>
                                         <th class="text-right">
-                                            @if (array_key_exists('cuotas', $form))
-                                                {{ "S/. " . number_format(collect($form['cuotas'])->sum('importe'), 2, '.', ',') }}
+                                            @if ($cuotas)
+                                                {{ "S/. " . number_format(collect($cuotas)->sum('importe'), 2, '.', ',') }}
                                             @else
                                                 0.00
                                             @endif

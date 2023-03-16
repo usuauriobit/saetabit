@@ -45,7 +45,7 @@ trait DescuentosRestantesGetter{
     }
     public function getDescuentoIdaVuelta(){
         // CONSULTAR PRIMERO SI ES POR IDA Y VUELTA
-        return Descuento::where('ruta_id', $this->tarifa->ruta_id)
+        return Descuento::where('ruta_id', optional($this->tarifa)->ruta_id ?? null)
             // ->whereHas('ruta', function($q) use ($origen, $destino) {
             //     return $q->whereHas('tramo', function($q) use ($origen, $destino) {
             //         $q->where('origen_id', $origen->id)
@@ -53,7 +53,7 @@ trait DescuentosRestantesGetter{
             //     })
             //     ->whereIsComercial();
             // });
-            ->whereTipoPasajeId($this->tarifa->tipo_pasaje_id)
+            ->whereTipoPasajeId(optional($this->tarifa)->tipo_pasaje_id ?? null)
             ->where(function($q){
                 $q->whereDate('fecha_expiracion', '>=', $this->vuelo_origen->fecha_hora_vuelo_programado)
                 ->orWhere('fecha_expiracion', null);
@@ -64,8 +64,8 @@ trait DescuentosRestantesGetter{
             ->get();
     }
     public function getDescuentoEdad(){
-        return Descuento::where('ruta_id', $this->tarifa->ruta_id)
-        ->whereTipoPasajeId($this->tarifa->tipo_pasaje_id)
+        return Descuento::where('ruta_id', optional($this->tarifa)->ruta_id ?? null)
+        ->whereTipoPasajeId(optional($this->tarifa)->tipo_pasaje_id ?? null)
         ->where(function($q){
             $q->whereDate('fecha_expiracion', '>=', $this->vuelo_origen->fecha_hora_vuelo_programado)
             ->orWhere('fecha_expiracion', null);
@@ -83,8 +83,8 @@ trait DescuentosRestantesGetter{
     * iterar sobre estos hasta agotar numero.
     */
     public function getDescuentoDiasAnticipacion(){
-        return Descuento::where('ruta_id', $this->tarifa->ruta_id)
-            ->whereTipoPasajeId($this->tarifa->tipo_pasaje_id)
+        return Descuento::where('ruta_id', optional($this->tarifa)->ruta_id ?? null)
+            ->whereTipoPasajeId(optional($this->tarifa)->tipo_pasaje_id ?? null)
             ->where(function($q){
                 $q->whereDate('fecha_expiracion', '>=', $this->vuelo_origen->fecha_hora_vuelo_programado)
                 ->orWhere('fecha_expiracion', null);
@@ -96,8 +96,8 @@ trait DescuentosRestantesGetter{
             ->get();
     }
     public function getDescuentoNormales(){
-        return Descuento::where('ruta_id', $this->tarifa->ruta_id)
-            ->whereTipoPasajeId($this->tarifa->tipo_pasaje_id)
+        return Descuento::where('ruta_id', optional($this->tarifa)->ruta_id ?? null)
+            ->whereTipoPasajeId(optional($this->tarifa)->tipo_pasaje_id ?? null)
             ->where(function($q){
                 $q->whereDate('fecha_expiracion', '>=', $this->vuelo_origen->fecha_hora_vuelo_programado)
                 ->orWhere('fecha_expiracion', null);
@@ -108,8 +108,8 @@ trait DescuentosRestantesGetter{
             ->get();
     }
     public function getDescuentoUltimosCupones(){
-        return Descuento::where('ruta_id', $this->tarifa->ruta_id)
-            ->whereTipoPasajeId($this->tarifa->tipo_pasaje_id)
+        return Descuento::where('ruta_id', optional($this->tarifa)->ruta_id ?? null)
+            ->whereTipoPasajeId(optional($this->tarifa)->tipo_pasaje_id ?? null)
             ->where(function($q){
                 $q->whereDate('fecha_expiracion', '>=', $this->vuelo_origen->fecha_hora_vuelo_programado)
                 ->orWhere('fecha_expiracion', null);
@@ -120,8 +120,8 @@ trait DescuentosRestantesGetter{
             ->get();
     }
     public function getInternos(){
-        return Descuento::where('ruta_id', $this->tarifa->ruta_id)
-        ->whereTipoPasajeId($this->tarifa->tipo_pasaje_id)
+        return Descuento::where('ruta_id', optional($this->tarifa)->ruta_id ?? null)
+        ->whereTipoPasajeId(optional($this->tarifa)->tipo_pasaje_id ?? null)
         ->where(function($q){
             $q->whereDate('fecha_expiracion', '>=', $this->vuelo_origen->fecha_hora_vuelo_programado)
             ->orWhere('fecha_expiracion', null);
