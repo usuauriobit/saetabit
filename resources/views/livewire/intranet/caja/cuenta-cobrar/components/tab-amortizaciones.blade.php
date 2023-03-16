@@ -5,10 +5,12 @@
         </x-slot>
         <x-slot name="actions">
             @can('intranet.caja.cuenta-cobrar.amortizacion.create')
-                <a class="btn btn-success btn-sm" href="#addAmortizacionModal">
-                    <i class="la la-add"></i>
-                    Agregar amortización
-                </a>
+                @if (!$cuenta_cobrar->is_pagado)
+                    <a class="btn btn-success btn-sm" href="#addAmortizacionModal">
+                        <i class="la la-add"></i>
+                        Agregar amortización
+                    </a>
+                @endif
             @endcan
         </x-slot>
     </x-master.item>

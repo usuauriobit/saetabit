@@ -22,6 +22,12 @@ class Create extends Component
     public $form = [];
     public $venta_id;
     public $caja_id;
+    public $caja_apertura_cierre;
+    public $venta;
+    public $caja;
+    public $tipo_pagos;
+    public $cuentas_bancarias;
+    public $tarjetas;
 
     protected function rules()
     {
@@ -45,7 +51,7 @@ class Create extends Component
         $this->caja_apertura_cierre = CajaAperturaCierre::find($this->caja_apertura_cierre_id);
         $this->venta = Venta::find($this->venta_id);
         $this->caja = Caja::find($this->caja_id);
-        $this->tipo_pagos = TipoPago::get();
+        $this->tipo_pagos = TipoPago::whereNotIn('id', [4])->get();
         $this->cuentas_bancarias = OficinaCuentaBancaria::get();
         $this->tarjetas = Tarjeta::get();
         $this->form['fecha_pago'] = date('Y-m-d');

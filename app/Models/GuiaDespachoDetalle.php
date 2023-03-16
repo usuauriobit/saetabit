@@ -22,6 +22,7 @@ class GuiaDespachoDetalle extends Model
         'ancho',
         'alto',
         'importe',
+        'monto_valorado',
     ];
 
     public function getDimensionesAttribute()
