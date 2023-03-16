@@ -102,6 +102,7 @@ class Show extends Component
     {
         CuentaCobrarAmortizacion::find($id)->delete();
         $this->cuenta_cobrar->refresh();
+        $this->cuenta_cobrar->update(['is_pagado' => false]);
         $this->emit('notify', 'success', 'Amortización eliminada correctamente');
     }
 

@@ -19,6 +19,8 @@ class Show extends Component
     public $form = [];
     public $venta_detalle = null;
     public $tab = 'detalle';
+    public $caja_apertura_cierre;
+    public $caja;
 
     protected function rules(){
         $rules = [
@@ -47,7 +49,6 @@ class Show extends Component
     {
         $this->caja_apertura_cierre = CajaAperturaCierre::find($this->caja_apertura_id);
         $this->caja = Caja::find($this->caja_id);
-        // dd($this->caja);
     }
 
     public function render()
