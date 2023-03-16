@@ -91,6 +91,9 @@ class Show extends Component
         ];
 
         $this->cuenta_cobrar->refresh();
+        if($this->cuenta_cobrar->saldo == 0) {
+            $this->cuenta_cobrar->update(['is_pagado' => true]);
+        }
         $this->emit('closeModals');
         $this->emit('notify', 'success', 'Amortización agregada correctamente');
     }
